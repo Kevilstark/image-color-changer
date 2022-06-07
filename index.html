@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset= "UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale-1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <p>Image Color Changer</p>
+        <table>
+            <tr valign="top">
+                <td width="50%">
+                    <fieldset>
+                        <p>
+                            <label>Target color</label> <input class="target" type="text" placeholder="target hex" value="#00a4d6"/>
+                        </p>
+                        <p>
+                            <label>Run time</label> <input class="time-tried" type="number" placeholder="run time" value="100"/>
+                      </p>
+                        <button class="execute">Compute Filters</button>
+                    </fieldset>
+                    <p>Real color</p>
+                    <div class="pixel realPixel"></div>
+                    <p>Image before change</p>
+                    <div class="pixel realImg"></div>
+                    
+                    <p>Best result</p>
+
+                    <p>Filtered image</p>
+                    <div class="pixel filterPixel"></div>
+                    
+                    <p class="filterDetail"></p>
+                    <p class="lossDetail"></p>
+                    <br>
+                    <div id="final-result"></div>
+                    
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
