@@ -307,19 +307,18 @@ $(document).ready(() => {
     const solver = new Solver(color);
     var result = solver.solve();
     var min = result.loss;
+    <h2>Best result</h2>
+
+    // <p class="filterDetail"></p>
+    // <p class="lossDetail"></p>
 
     const elementAdd = document.getElementById("final-result");
     $("#final-result").empty();
 
-    let resultTitle = document.createElement("h2");
-    let resultTitleVal = document.createTextNode('Best result');
+    let resultTitle = document.createElement("p");
+    let resultTitleVal = document.createTextNode('Filtered image');
     resultTitle.appendChild(resultTitleVal);
     elementAdd.appendChild(resultTitle);
-
-    let resultImgTitle = document.createElement("p");
-    let resultImgTitleVal = document.createTextNode('Filtered element');
-    resultImgTitle.appendChild(resultImgTitleVal);
-    elementAdd.appendChild(resultImgTitle);
 
     let resultImg = document.createElement("div");
     resultImg.setAttribute('class', 'pixel filterPixel')
@@ -330,8 +329,8 @@ $(document).ready(() => {
     elementAdd.appendChild(resultCss);
 
     let resultLoss = document.createElement("p");
-    resultLoss.setAttribute('class', 'lossDetail')
-    elementAdd.appendChild(resultLoss);
+    resultLoss.setAttribute('class', 'filterDetail')
+    elementAdd.appendChild(resultCss);
 
     let para = document.createElement("button");
     para.setAttribute('id', 'clickResult')

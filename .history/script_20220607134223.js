@@ -307,31 +307,25 @@ $(document).ready(() => {
     const solver = new Solver(color);
     var result = solver.solve();
     var min = result.loss;
+    <h2>Best result</h2>
+
+    // <p>Filtered image</p>
+    // <div class="pixel filterPixel"></div>
+    
+    // <p class="filterDetail"></p>
+    // <p class="lossDetail"></p>
 
     const elementAdd = document.getElementById("final-result");
     $("#final-result").empty();
 
-    let resultTitle = document.createElement("h2");
-    let resultTitleVal = document.createTextNode('Best result');
+    let resultTitle = document.createElement("p");
+    let resultTitleVal = document.createTextNode('Filtered image');
     resultTitle.appendChild(resultTitleVal);
     elementAdd.appendChild(resultTitle);
-
-    let resultImgTitle = document.createElement("p");
-    let resultImgTitleVal = document.createTextNode('Filtered element');
-    resultImgTitle.appendChild(resultImgTitleVal);
-    elementAdd.appendChild(resultImgTitle);
 
     let resultImg = document.createElement("div");
     resultImg.setAttribute('class', 'pixel filterPixel')
     elementAdd.appendChild(resultImg);
-
-    let resultCss = document.createElement("p");
-    resultCss.setAttribute('class', 'filterDetail')
-    elementAdd.appendChild(resultCss);
-
-    let resultLoss = document.createElement("p");
-    resultLoss.setAttribute('class', 'lossDetail')
-    elementAdd.appendChild(resultLoss);
 
     let para = document.createElement("button");
     para.setAttribute('id', 'clickResult')
@@ -347,21 +341,19 @@ $(document).ready(() => {
     resultTable.appendChild(td0);
 
     let td1 = document.createElement('td');
-    resultTable.appendChild(td1);
 
+    resultTable.appendChild(td1);
+    
     let td2 = document.createElement('td');
     resultTable.appendChild(td2);
-
     let col0 = document.createTextNode('runtime');
     td0.appendChild(col0);
-
     let col1 = document.createTextNode('css');
     td1.appendChild(col1);
-
     let col2 = document.createTextNode('loss');
     td2.appendChild(col2);
-
     var table = document.getElementById("all-result");
+    
     for(var i=0;i<triedtime;i++) {
         var resultChange = solver.solve();
         var row = table.insertRow(i);

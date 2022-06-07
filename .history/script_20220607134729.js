@@ -307,19 +307,21 @@ $(document).ready(() => {
     const solver = new Solver(color);
     var result = solver.solve();
     var min = result.loss;
+    // <h2>Best result</h2>
+
+
 
     const elementAdd = document.getElementById("final-result");
     $("#final-result").empty();
 
-    let resultTitle = document.createElement("h2");
-    let resultTitleVal = document.createTextNode('Best result');
-    resultTitle.appendChild(resultTitleVal);
-    elementAdd.appendChild(resultTitle);
+    let result = document.createElement("h2");
+    let resultTitleVal = document.createTextNode('Filtered image');
+    elementAdd.appendChild(resultCss);
 
     let resultImgTitle = document.createElement("p");
-    let resultImgTitleVal = document.createTextNode('Filtered element');
-    resultImgTitle.appendChild(resultImgTitleVal);
-    elementAdd.appendChild(resultImgTitle);
+    let resultImgTitleVal = document.createTextNode('Filtered image');
+    resultTitle.appendChild(resultTitleVal);
+    elementAdd.appendChild(resultTitle);
 
     let resultImg = document.createElement("div");
     resultImg.setAttribute('class', 'pixel filterPixel')
